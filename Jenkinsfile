@@ -17,7 +17,7 @@ pipeline {
         container('kaniko') {
           script {
             sh '''
-            /kaniko/executor --dockerfile `pwd`/Dockerfile \
+            /kaniko/executor --skip-tls-verify --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
                              --destination=bio-hub.pune.cdac.in/ci/myweb:${BUILD_NUMBER}
             '''
