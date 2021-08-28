@@ -19,8 +19,8 @@ pipeline {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
-                             --destination=myweb:${BUILD_NUMBER} \
-                             --skip-tls-verify
+                             --destination=ramkicse/myweb:${BUILD_NUMBER} \
+                            
             '''
           }
         }
