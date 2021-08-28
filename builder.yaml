@@ -3,6 +3,16 @@ kind: Pod
 metadata:
   name: kaniko
 spec:
+  hostAliases:
+  - ip: "10.96.80.180"
+    hostnames:
+    - "bio-hub.pune.cdac.in"
+    - "bio-hub"
+#   - ip: "10.1.2.3"
+#     hostnames:
+#     - "foo.remote"
+#     - "bar.remote"
+    
   containers:
   - name: kubectl
     image: joshendriks/alpine-k8s
