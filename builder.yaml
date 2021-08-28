@@ -27,8 +27,8 @@ spec:
     volumeMounts:
       - name: kaniko-secret
         mountPath: .docker/
-#       - name: dockerfile-storage
-#         mountPath: /workspace
+      - name: dockerfile-storage
+        mountPath: /workspace
   volumes:
     - name: kaniko-secret
       secret:
@@ -36,6 +36,6 @@ spec:
         items:
           - key: .dockerconfigjson
             path: config.json
-#     - name: dockerfile-storage
-#       persistentVolumeClaim:
-#         claimName: dockerfile-storage-claim
+    - name: dockerfile-storage
+      persistentVolumeClaim:
+        claimName: dockerfile-storage-claim
