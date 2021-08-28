@@ -17,7 +17,7 @@ pipeline {
         container('kaniko') {
           script {
             sh '''
-            /kaniko/executor --dockerfile `pwd`/Dockerfile \
+            /kaniko/executor --skip-tls-verify-pull  --verbosity debug --skip-tls-verify  --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
                              --destination=docker.io/ramkicse/myweb:${BUILD_NUMBER} \
                             
